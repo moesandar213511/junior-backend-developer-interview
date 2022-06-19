@@ -9,8 +9,8 @@ A2. eager loading functionality ကို အသုံးပြုနိုင�
 
 Q3. ORM ဆိုတာဘာလဲ? ဘယ်လိုအလုပ်လုပ်တာလဲ?
 A3. 
-Object-relational mapping (ORM) က language နှင့် databaseကြား ကြားခံ layerကို ဖန်တီးပေးပြီး OOP paradigm မပါပဲ dataနဲ့ လုပ်နိုင်စေရန် ကူညီပေးတဲ့ technique ဖြစ်သည်။
-Eloquent က Laravel framework အတွင်း default အနေဖြင့် ထည့်သွင်းထားသောORM ဖြစ်သည်။ ORM က data တွေကို object အဖြစ် ကိုယ်စားပြုပြီး  database records တွေကို handling လုပ်ရမှာ လွယ်ကူစေတယ်။
+Object-relational mapping (ORM) က language နှင့် databaseကြား ကြားခံ layerကို ဖန်တီးပေးပြီး OOP paradigm မပါပဲ dataနဲ့ လုပ်နိုင်စေရန် ကူညီပေးတဲ့ technique ဖြစ်ပါတယ်။
+Eloquent က Laravel framework အတွင်း default အနေဖြင့် ထည့်သွင်းထားသောORM ဖြစ်ပါတယ်။ ORM က data တွေကို object အဖြစ် ကိုယ်စားပြုပြီး  database records တွေကို handling လုပ်ရမှာ လွယ်ကူစေတယ်။
 
 
 Q4. Eloquent ရဲ့ chunk function ကို မည်သည့်အချိန်တွင် သုံးသင့်ပါသလဲ။
