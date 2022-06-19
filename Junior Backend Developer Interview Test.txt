@@ -48,7 +48,7 @@ A7.
 - Code တွေကို testလုပ်ရလွယ်ကူပြီး clear and flexible ဖြစ်။
 
 
-Q8. Model::get()->count() နှင် ့ Model::count() နှစ်ခုမှာဘယ်တစ်ခုကို အသုံးပြုသင့်ပါသလဲ။
+Q8. Model::get()->count() နှံ Model::count() နှစ်ခုမှာဘယ်တစ်ခုကို အသုံးပြုသင့်ပါသလဲ။
 A8. Model::count() ကိုအသုံးပြုသင့်ပါတယ်။
 
 
