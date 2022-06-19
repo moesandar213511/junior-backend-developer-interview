@@ -1,0 +1,88 @@
+Q1. LazyCollection ကို
+
+A1. Large Dataset ကို memory နည်းနည်းနဲ့သုံးရန်
+
+
+Q2. Eloquent model ကိုသုံးတဲ့အခါ N+1 query problem ကိုမဖြစ်အေ ာင် ဘယ်လိုနည်းစနစ်ကိုသုံးသင့်သလဲ?
+A2. eager loading functionality ကို အသုံးပြုနိုင်ပါတယ်။
+
+
+Q3. ORM ဆိုတာဘာလဲ? ဘယ်လိုအလုပ်လုပ်တာလဲ?
+A3. 
+Object-relational mapping (ORM) က language နှင့် databaseကြား ကြားခံ layerကို ဖန်တီးပေးပြီး OOP paradigm မပါပဲ dataနဲ့ လုပ်နိုင်စေရန် ကူညီပေးတဲ့ technique ဖြစ်သည်။
+Eloquent က Laravel framework အတွင်း default အနေဖြင့် ထည့်သွင်းထားသောORM ဖြစ်သည်။ ORM က data တွေကို object အဖြစ် ကိုယ်စားပြုပြီး  database records တွေကို handling လုပ်ရမှာ လွယ်ကူစေတယ်။
+
+
+Q4. Eloquent ရဲ့ chunk function ကို မည်သည့်အချိန်တွင် သုံးသင့်ပါသလဲ။
+A4. Project ကြီးတွေမှာ database က data records group တွေနဲ့အသုံးပြုအလုပ်လုပ်ရင် dataset group ကြီးကို dataset အသေးလေးတွေ အဖြစ်ခွဲချင်တဲ့အခါမှာ သုံးသင့်ပါတယ်။
+
+
+Q5. Laravel Partition
+$collection = collect([1, 2, 3, 4, 5, 6]);
+အထက်ပါ collection ကနေ value 3 ထက်ငယ်တဲ ့ collection နဲ့ value 3 (သုိ့)  3 ထက်ကြီးတဲ့ valueတွေ ပါဝင်တဲ့ collection ၂ခုကိုခွဲထုတ်ပေးပါ။
+
+A5.
+
+[$under3, $equalOrAbove3] = $collection->partition(function ($x) {
+    return $x < 3;
+});
+ 
+$ans1 = $under3->all();
+$ans2 = $equalOrAbove3->all();
+
+echo "<pre>";
+print_r($ans1);
+print_r($ans2);
+
+
+Q6. include() and require() functions နှစ်ခု၏ ကွာအလုပ်လုပ်ပုံ ကွာခြ ားချက်
+A6. 
+include() => include() ထဲမှာ ကိုယ်ရေးလိုက်တဲ့ file မချိတ်လဲရတယ်။ file မရှိလဲ အလုပ်ဆက်လုပ်စေချင်ရင်  သုံးပါတယ်။ 
+require() => ကိုယ်ရေးလိုက်တဲ့ file ချိတ်ပြီးမှ အလုပ်ဆက်လုပ်စေချင်ရင် သုံးပါတယ်။ file မရှိရင် error တက်ပါတယ်။
+
+
+Q7. Facade Pattern ကို အသုံးပြုတဲ့အတွက် ဘာအကျိုးကျေးဇူးတွေ ရနိုင်ပါသလဲ။
+A7.
+- ရှုပ်ထွေးတဲ့ လုပ်ငန်းစဥ်တွေကို သုံးရလွယ်အောင်လုပ်ပေးတဲ့ ‌ရေးနည်းပုံစံဖြစ်။
+- ကြိုသတ်မှတ်ထားတဲ့လုပ်ငန်းစဥ်တွေ တစ်ခုချင်းစီကို ‌access လုပ်စရာမလိုပဲ တစ်ကြိမ် access လုပ်ရုံနဲ့ သတ်မှတ်ထားတဲ့လုပ်ငန်းစဥ်တစ်ခုချင်းစီ ဆက်တိုက် လုပ်ဆောင်နိုင်လို့ အဆင်ပြေပါတယ်။
+- Code တွေကို testလုပ်ရလွယ်ကူပြီး clear and flexible ဖြစ်။
+
+
+Q8. Model::get()->count() နှင် ့ Model::count() နှစ်ခုမှာဘယ်တစ်ခုကို အသုံးပြုသင့်ပါသလဲ။
+A8. Model::count() ကိုအသုံးပြုသင့်ပါတယ်။
+
+
+Q9. Eager Loading ကို အသုံးပြုတဲ့အတွက် ဘာအကျိုးကျေးဇူးတွေရနိုင်ပါသလဲ။ 
+A9. 
+- Database ထဲက ဆွဲထုတ်မဲ့ data တွေနဲ့အတူ တခြားသော ဆက်စပ်သော data တွေကို ဆွဲထုတ်တဲ့အခါ queriesအများကြီးနဲ့ ဖောင်းပွမနေပဲ queries တွေတွေလျှော့ချပေး။
+- Database ထဲက data တွေဆွဲထုတ်တဲ့အခါ ကြုံရတဲ့ N+1 query problem ကို ဖြေရှင်းပေး။
+
+
+Q10. Eager Loading ကို အသုံးပြုထားတဲ့ Query တစ်ကြောင်းရေးပေးပါ။
+A10.
+$posts = Post::with('category')->get();
+
+
+Q11. DDos attack ဆိုတာဘာလဲ?
+A11.
+distributed denial-of-service (DDoS) attack => Attackers က  target victims တွေကို cyber attack လုပ်ဖို့အတွက် Malwaresတွေ၊ Virusတွေ social platforms ပေါ်မှာ ပုံစံအမျိုးမျိုးနဲ့ ဖြန့်ပါတယ်။ တစ်ဘက်ကအဖွဲ့အစည်းကို နှောက်ယှက်ခြင်း/  Serve down သွားပြီးအခြားသူများဝင်ရောက်အသုံးပြုနိုင်ခြင်းမရှိစေရန် တိုက်ခိုက်ကြပါတယ်။
+
+
+Q12. Web Application တစ်ခုမှာ 500 server error က ဘယ်လိုမျိုး အခြေအနေမှာ ပေါ်တတ်ပါသလဲ?
+A12. backend server ဘက်က error ရှိရင် 500 server error တက်ပါတယ်။
+
+
+Q13. လက်ရှိအချနိတွင် Security bug fixes ပေးနေတဲ့ php versions တွေက ဘာတွေ လဲ ?
+A13. PHP 8.1, 8.0, 7.4 
+
+
+Q14. Laravel Eloquent မှာ soft delete က ဘယ်လိုအလုပ်လုပ်ပါသလဲ?
+A14. ပုံမှန် data တွေကို delete လုပ်ရင် database ထဲကပျက်သွားပါတယ်။ laravel model class တွေထဲက softdelete method လေးကိုသုံးမယ်ဆိုရင် user ဘက်က data တွေဖျက်တဲ့အခါ UI ဘက်မှာ data ပျက်သွားပေမဲ့ database ထဲမှာ ကျန်ရှိနေတဲ့အတွက်  retrieve/ backup ပြန်ယူလို့ရပါတယ်။ soft deleteကိုသုံးပြီး deleted at ဆိုတဲ့ columnကိုဖန်တီးပြီး ဖျက်လိုက်တဲ့အချိန်database မှာ ပေါ်လာပြီးတစ်နေရာမှာ သိမ်းပေးထားပါတယ်။soft delete က deleteလိုမျိုး dataလုံးဝ မပျက်သွားတာကလွဲရင် အလုပ်လုပ်ပုံက Delete နဲ့ အတူတူပါပဲ။ သူ့ကိုပြန်ရှာချင်ရင် withTrashed() functionကိုသုံး ပြန်ရှာနိုင်ပြီး ပြန်restoreလုပ်ရင် restore() functionကိုသုံးရပြီ အပြီးပိုင်ဖျက်ချမယ်ဆိုရင်တော့ forceDelete() functionကိုသုံးလို့ရပါတယ်။
+
+
+Q15. Laravel Migration မှာ နေ ာက်ဆုံး migrate လုပ်ခဲ့တဲ့ဖိုင်ကိုဘယ် artisan command ရေး၍နောက်ပြန်ဆုတ်မလဲ?
+A15. php artisan migrate:rollback --step=1
+
+
+Q16. Laravel မှာ Cache Clear လုပ်ရန်အတွက် ဘယ် artisan command ကို runရမလဲ ?
+A16. php artisan optimize:clear (or) php artisan optimize
