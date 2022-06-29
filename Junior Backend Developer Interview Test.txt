@@ -73,7 +73,7 @@ A12. backend server ဘက်က error ရှိရင် 500 server error တ�
 
 
 Q13. လက်ရှိအချနိတွင် Security bug fixes ပေးနေတဲ့ php versions တွေက ဘာတွေ လဲ ?
-A13. PHP 8.1, 8.0, 7.4 
+A13. PHP 8.1.3, 8.0.28, and 7.4.28
 
 
 Q14. Laravel Eloquent မှာ soft delete က ဘယ်လိုအလုပ်လုပ်ပါသလဲ?
